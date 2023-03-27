@@ -1,12 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+ import './App.css';
 import BaseApp from './core/Base';
-import UserComponent from './Components/UserComponents.JS';
+import UserComponent from './Components/UserComponent';
 
 function App() {
   return (
     <div className="App">
-      <UserComponent/> 
+     <UserComponent/>
     </div>
   );
 }

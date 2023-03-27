@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.box {
+.title {
   padding: 12px;
   font-size: 25px;
   font-weight: bolder;
@@ -12,14 +12,12 @@
 }
 
 .nav-styles {
-  padding: 27px;
+  padding: 12px;
   width: 100%;
   background-color: plum;
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
   padding: 15px;
   font-size: large;
   font-weight: bolder;
@@ -27,6 +25,46 @@ footer {
   background-color: gray;
 
 }
- 
 
- 
+.user-content {
+  margin: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+
+}
+
+
+.user-card {
+  color: aliceblue;
+  background-color: rgb(56, 40, 66);
+  border-radius: 5px;
+  width: 250px;
+  height: 250px;
+
+}
+
+.btn {
+  padding: 8px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: medium;
+
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+
+} 
+
+.circle {
+  height:79vh;
+  margin: 1vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
