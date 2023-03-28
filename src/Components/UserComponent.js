@@ -8,15 +8,19 @@ export default function UserComponent() {
     const [user, setUser] = useState(data);
 
     // function 
-const deleteUser = (idx) => {
-   const alterList = user.filter((per, id) => per.id != idx)
- setUser(alterList);
-}
+    const deleteUser = (idx) => {
+        const alterList = user.filter((per, id) => per.id != idx)
+        setUser(alterList);
+    }
 
     return (
         <BaseApp
             title="User Details">
-                <AddUser/>
+            {/* In order to add details of more students, we take user and setUser as props inside the AddUser tag as shown below so that these 
+            user and SetUser can now be passed through AddUser component(which is passed in line 3 of AddUser.js file) and the newly entered  
+            student data under the object name newUser can be added to already existing students data using spread operator (which is shown in
+            the 26th line of AddUser.js file) */}
+            <AddUser user={user} setUser={setUser} />
             <div className="user-content">
                 {user.map((person, idx) => (
                     <div key={idx} className="user-card">
@@ -28,7 +32,7 @@ const deleteUser = (idx) => {
                         <div className="btn-grp">
                             <button className="btn">Edit</button>
                             <button className="btn"
-                          onClick={() => deleteUser(person.id)}  >Delete</button>
+                                onClick={() => deleteUser(person.id)}  >Delete</button>
                         </div>
 
                     </div>
