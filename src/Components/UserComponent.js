@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import BaseApp from "../core/Base";
-import { data } from "../Data/data";
 import AddUser from "./AddUser";
 
 
 export default function UserComponent() {
-    const [user, setUser] = useState(data);
 
     // function 
     const deleteUser = (idx) => {
@@ -20,7 +18,7 @@ export default function UserComponent() {
             user and SetUser can now be passed through AddUser component(which is passed in line 3 of AddUser.js file) and the newly entered  
             student data under the object name newUser can be added to already existing students data using spread operator (which is shown in
             the 26th line of AddUser.js file) */}
-            <AddUser user={user} setUser={setUser} />
+            {/* <AddUser user={user} setUser={setUser} /> */}
             <div className="user-content">
                 {user.map((person, idx) => (
                     <div key={idx} className="user-card">

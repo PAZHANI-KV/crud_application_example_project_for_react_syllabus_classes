@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import BaseApp from "../core/Base";
 
 export default function AddUser({ user, setUser }) {
 
@@ -31,7 +32,7 @@ export default function AddUser({ user, setUser }) {
         setBatch("")
         setEmail("")
         setExperience("")
-        
+
         // The above 5 lines indicate that after setUser is concadinated with new student data(i.e, immediately after clicking the add button),
         // the entry boxes must be emptied like before.That is why these lines are entered within the same addNewUser function after setUser 
         // is concadinated
@@ -39,61 +40,67 @@ export default function AddUser({ user, setUser }) {
     }
 
     return (
-        <div>
+        <BaseApp
+
+            title={"Add a New User!"}>
+
+            <div>
 
 
-            <input
-                placeholder="id"
-                type="number"
-                value={id}
-                onChange={(event) => setId(event.target.value)}
-            />
+                <input
+                    placeholder="id"
+                    type="number"
+                    value={id}
+                    onChange={(event) => setId(event.target.value)}
+                />
 
 
-            <input
-                placeholder="name"
-                type="text"
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-            />
+                <input
+                    placeholder="name"
+                    type="text"
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
+                />
 
 
-            <input
-                placeholder="batch"
+                <input
+                    placeholder="batch"
 
-                value={batch}
-                onChange={(event) => setBatch(event.target.value)}
-            />
-
-
-            <input
-                placeholder="email"
-                type="text"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-            />
+                    value={batch}
+                    onChange={(event) => setBatch(event.target.value)}
+                />
 
 
-            <input
-                placeholder="experience"
-                type="number"
-                value={experience}
-                onChange={(event) => setExperience(event.target.value)}
-            />
-
-            {/* <input
-            placeholder="ex:red"
-            value={clr}
-           style={{background:clr}}
-            onChange={(event) => setClr(event.target.value)}
-            /> */}
+                <input
+                    placeholder="email"
+                    type="text"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                />
 
 
-            <button
-                onClick={addNewUser}
-            >Add</button>
+                <input
+                    placeholder="experience"
+                    type="number"
+                    value={experience}
+                    onChange={(event) => setExperience(event.target.value)}
+                />
+
+                {/* <input
+placeholder="ex:red"
+value={clr}
+style={{background:clr}}
+onChange={(event) => setClr(event.target.value)}
+/> */}
 
 
-        </div>
+                <button
+                    onClick={addNewUser}
+                >Add</button>
+
+
+            </div>
+        </BaseApp>
+
     )
 }
