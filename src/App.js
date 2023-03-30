@@ -1,9 +1,13 @@
 import './App.css';
 import BaseApp from './core/Base';
 import UserComponent from './Components/UserComponent';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import AddUser from './Components/AddUser';
- 
+import { data } from './Data/data';
+import { useState } from 'react';
+import { NoPage } from './Components/NoPage';
+import { UserDetails } from './Components/UserDetails';
+
 
 function App() {
 
@@ -16,11 +20,33 @@ function App() {
 
       <Switch>
         <Route exact path="/">
-          <UserComponent />
+
+          <UserComponent
+            user={user}
+            setUser={setUser} />
+
         </Route>
 
         <Route path="/adduser">
-          <AddUser />
+
+          <AddUser
+            user={user}
+            setUser={setUser} />
+
+        </Route>
+
+        <Route path="/user:idx">
+          <UserDetails user={user} />
+        </Route>
+
+        <Route path="/page">
+          <Redirect path="/"></Redirect>
+        </Route>
+
+        <Route path="**">
+
+          <NoPage />
+
         </Route>
 
       </Switch>

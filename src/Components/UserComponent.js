@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import BaseApp from "../core/Base";
 import AddUser from "./AddUser";
 
+export default function UserComponent({ user, setUser }) {
 
-export default function UserComponent() {
-
+const history = useHistory();
+   
     // function 
     const deleteUser = (idx) => {
         const alterList = user.filter((per, id) => per.id != idx)
@@ -28,9 +30,16 @@ export default function UserComponent() {
                         <p>EXPERIENCE : {person.experience}</p>
 
                         <div className="btn-grp">
+
                             <button className="btn">Edit</button>
+
+                            <button className="btn"
+                                onClick={() => history.push(`/user${idx}`)}
+                            >View</button>
+
                             <button className="btn"
                                 onClick={() => deleteUser(person.id)}  >Delete</button>
+
                         </div>
 
                     </div>

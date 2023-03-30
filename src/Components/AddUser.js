@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import BaseApp from "../core/Base";
 
 export default function AddUser({ user, setUser }) {
+
+    const history = useHistory();
+
 
     // defining states for all the inputs
     const [id, setId] = useState("")
@@ -36,6 +40,8 @@ export default function AddUser({ user, setUser }) {
         // The above 5 lines indicate that after setUser is concadinated with new student data(i.e, immediately after clicking the add button),
         // the entry boxes must be emptied like before.That is why these lines are entered within the same addNewUser function after setUser 
         // is concadinated
+
+        history.push("/");
 
     }
 
