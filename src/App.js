@@ -7,6 +7,7 @@ import { data } from './Data/data';
 import { useState } from 'react';
 import { NoPage } from './Components/NoPage';
 import { UserDetails } from './Components/UserDetails';
+import EditUser from './Components/EditUser';
 
 
 function App() {
@@ -30,6 +31,14 @@ function App() {
         <Route path="/adduser">
 
           <AddUser
+            user={user}
+            setUser={setUser} />
+
+        </Route>
+
+        <Route path="/edit:id">
+
+          <EditUser
             user={user}
             setUser={setUser} />
 

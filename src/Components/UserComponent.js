@@ -5,8 +5,8 @@ import AddUser from "./AddUser";
 
 export default function UserComponent({ user, setUser }) {
 
-const history = useHistory();
-   
+    const history = useHistory();
+
     // function 
     const deleteUser = (idx) => {
         const alterList = user.filter((per, id) => per.id != idx)
@@ -31,14 +31,17 @@ const history = useHistory();
 
                         <div className="btn-grp">
 
-                            <button className="btn">Edit</button>
+                            <button className="btn"
+                            onClick={()=>history.push(`/edit${person.id}`)}
+                            >Edit</button>
 
                             <button className="btn"
                                 onClick={() => history.push(`/user${idx}`)}
                             >View</button>
 
                             <button className="btn"
-                                onClick={() => deleteUser(person.id)}  >Delete</button>
+                                onClick={() => deleteUser(person.id)}
+                            >Delete</button>
 
                         </div>
 
