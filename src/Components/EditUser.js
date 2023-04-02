@@ -26,13 +26,14 @@ const EditUser = ({ user, setUser }) => {
     // The following line deals with the operation of editing the user details in the editing page!
     const updateUser = () => {
 
-// .find is a array method. It will return a object on using it.Here in below line, by using the .find method the id of all the users is
-// compared with the id of the selected user and the data of selected user is found. Then the data of the selected user alone will be returned
-// as an object of data. 
+        // .find is a array method. It will return a object on using it.Here in below line, by using the .find method the id of all the users is
+        // compared with the id of the selected user and the data of selected user is found. Then the data of the selected user alone will be returned
+        // as an object of data. 
 
 
         const editIndex = user.findIndex(per => per.id === id)
         console.log(editIndex)
+
 
         const editedData = {
             idx,
